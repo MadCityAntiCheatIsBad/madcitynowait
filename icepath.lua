@@ -1,13 +1,12 @@
-local Client = {};
-local WC = require(game.ReplicatedStorage.Modules.WeaponCore)
-Client.OldWeaponCore = {};
+Removed :C
+enjoy for hovermode
 
-for i,v in next, WC do
-Client.OldWeaponCore[i] = v;
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local Car = game.Workspace.ObjectSelection:FindFirstChild(LocalPlayer.Name.."'s Vehicle")
+
+if Car then
+  if Car.CarChassis then
+    Car.CarChassis.HoverMode.Value = true
+    Car.CarChassis.Boosting.Value = true
+  end
 end
-
-Client.OldWeaponCore.IcePath = function(...)
-Client.OldWeaponCore:IcePath(...)
-end
-
-Client.OldWeaponCore.IcePath(game.Players.LocalPlayer.Character)
