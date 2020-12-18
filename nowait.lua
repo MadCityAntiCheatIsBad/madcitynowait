@@ -1,19 +1,6 @@
-local Client = {};
-Client.fenv = function(...)
-return getfenv(...)
-end
+Removed :C
+enjoy for free helicopter spawn
 
-Client.Run = function(...)
-warn(...)
-end
+local v = {"Helicopter", "SpawnVehicle"}
 
-Client.Run("nowait")
-for i,v in pairs(getreg()) do
-if type(v) == "function" then
-if Client.fenv(v).HoldProgress then
-Client.fenv(v).HoldProgress = function(...)
-return true;
-end
-end
-end
-end
+game.ReplicatedStorage.Event:FireServer(v[2], v[1])
