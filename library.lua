@@ -122,7 +122,7 @@ if not utf8 or not utf8.char or utf8.char(10003) == utf8.char(8238) then -- bad 
 				[10003] = "\226\156\147" -- Right to left (unused)
 			})[id] or ""
 		end
-	}f
+	}
 end
 
 local library = {
