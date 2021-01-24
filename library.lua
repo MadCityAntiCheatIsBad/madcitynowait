@@ -122,7 +122,7 @@ if not utf8 or not utf8.char or utf8.char(10003) == utf8.char(8238) then -- bad 
 				[10003] = "\226\156\147" -- Right to left (unused)
 			})[id] or ""
 		end
-	}
+	}f
 end
 
 local library = {
@@ -193,12 +193,12 @@ function dragger.new(frame)
 end
 library.connections.hide = game:GetService("UserInputService").InputBegan:Connect(function(key, gpe)
     if (not gpe) then
-        if key.KeyCode == Enum.KeyCode.RightControl then
+        if key.KeyCode == Enum.KeyCode.RightShift then
             library.toggled = not library.toggled
             for i, data in next, library.queue do
                 pcall(function()
                     local pos = (library.toggled and data.p or UDim2.new(-1, 0, -0.5, 0))
-                    data.w:TweenPosition(pos, (library.toggled and "Out" or "In"), "Quad", 0.15, true)
+                    data.w.Position = pos
                 end)
                 wait()
             end
