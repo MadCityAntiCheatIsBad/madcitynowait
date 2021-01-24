@@ -1071,7 +1071,7 @@ function types:SearchBox(text, options, callback)
                 rebuild("")
             end
 	
-	    box.Text = ""
+	    --box:FindFirstChild("Box").Text = ""
             self:Resize();
             return reload, box:FindFirstChild('Box');
         end
