@@ -1070,6 +1070,8 @@ function types:SearchBox(text, options, callback)
                 list = new_list;
                 rebuild("")
             end
+	
+	    box.Text = ""
             self:Resize();
             return reload, box:FindFirstChild('Box');
         end
