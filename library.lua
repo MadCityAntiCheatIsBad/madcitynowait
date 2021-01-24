@@ -112,19 +112,6 @@ class Window [
 ]
 ]]
 
-local utf8 = utf8
-if not utf8 or not utf8.char or utf8.char(10003) == utf8.char(8238) then -- bad exploit
-	local utf8 = {
-		char = function(id)
-			return ({
-				[8238] = "\226\128\174", -- Checkmark
-				[9492] = "\226\148\148", -- Pipe (Right)
-				[10003] = "\226\156\147" -- Right to left (unused)
-			})[id] or ""
-		end
-	}
-end
-
 local library = {
     count = 0,
 	version = vers,
